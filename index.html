@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborative News Feed</title>
+  <!-- À mettre dans le <head> -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="app.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    input, textarea { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+    button { margin: 5px 0; padding: 8px 12px; }
+    #messages p { border-bottom: 1px solid #ddd; padding: 10px 0; }
+  </style>
+  
+</head>
+<body>
+  <h2>Collaborative News Feed</h2>
+
+  <div id="auth">
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="signup">Sign Up</button>
+    <button id="login">Log In</button>
+    <button id="logout" style="display:none;">Log Out</button>
+  </div>
+
+  <div id="postArea" style="display:none;">
+    <textarea id="messageInput" placeholder="Write a message..."></textarea>
+    <button id="postMessage">Post</button>
+  </div>
+
+  <div id="messagesDisplay">
+    <h3>Messages</h3>
+    <div id="messages"></div>
+  </div>
+</body>
+</html>
